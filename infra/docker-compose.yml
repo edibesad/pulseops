@@ -1,0 +1,43 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    env_file:
+      - .env
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASS}
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASS}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pulseops_pg:/var/lib/postgresql/data
+
+  # api-gateway:
+  #   build: ../src/ApiGateway
+  #   env_file: [.env]
+  #   depends_on: [rabbitmq]
+  #   ports:
+  #     - "5000:8000"
+  #   environment:
+  #     ASPNETCORE_URLS: http://+:8080
+
+  # event-worker:
+  #   build: ../src/EventWorker
+  #   env_file: [.env]
+  #   depends_on: [rabbitmq, postgres]
+
+volumes:
+  pulseops_pg:

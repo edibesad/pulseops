@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\pulseops\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{486CE0BA-2A62-45A4-A0FA-D22D582C4F35}|EventWorker\\EventWorker.csproj|d:\\projects\\pulseops\\eventworker\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{486CE0BA-2A62-45A4-A0FA-D22D582C4F35}|EventWorker\\EventWorker.csproj|solutionrelative:eventworker\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367B15D2-7500-4695-A6F1-95A1EB78DE17}|ApiGateway\\ApiGateway.csproj|d:\\projects\\pulseops\\apigateway\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367B15D2-7500-4695-A6F1-95A1EB78DE17}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367B15D2-7500-4695-A6F1-95A1EB78DE17}|ApiGateway\\ApiGateway.csproj|d:\\projects\\pulseops\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367B15D2-7500-4695-A6F1-95A1EB78DE17}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48D7B01D-4DCA-49A5-AE80-019F575A80CB}|Shared\\Shared.csproj|d:\\projects\\pulseops\\shared\\contracts\\events\\slaviolated.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48D7B01D-4DCA-49A5-AE80-019F575A80CB}|Shared\\Shared.csproj|solutionrelative:shared\\contracts\\events\\slaviolated.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48D7B01D-4DCA-49A5-AE80-019F575A80CB}|Shared\\Shared.csproj|d:\\projects\\pulseops\\shared\\contracts\\events\\incidentended.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48D7B01D-4DCA-49A5-AE80-019F575A80CB}|Shared\\Shared.csproj|solutionrelative:shared\\contracts\\events\\incidentended.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Worker.cs",
+              "DocumentMoniker": "D:\\Projects\\pulseops\\EventWorker\\Worker.cs",
+              "RelativeDocumentMoniker": "EventWorker\\Worker.cs",
+              "ToolTip": "D:\\Projects\\pulseops\\EventWorker\\Worker.cs",
+              "RelativeToolTip": "EventWorker\\Worker.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T08:52:46.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "D:\\Projects\\pulseops\\ApiGateway\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "ApiGateway\\Controllers\\EventsController.cs",
+              "ToolTip": "D:\\Projects\\pulseops\\ApiGateway\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "ApiGateway\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T16:36:17.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\pulseops\\ApiGateway\\Program.cs",
+              "RelativeDocumentMoniker": "ApiGateway\\Program.cs",
+              "ToolTip": "D:\\Projects\\pulseops\\ApiGateway\\Program.cs",
+              "RelativeToolTip": "ApiGateway\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T16:35:48.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SlaViolated.cs",
+              "DocumentMoniker": "D:\\Projects\\pulseops\\Shared\\Contracts\\Events\\SlaViolated.cs",
+              "RelativeDocumentMoniker": "Shared\\Contracts\\Events\\SlaViolated.cs",
+              "ToolTip": "D:\\Projects\\pulseops\\Shared\\Contracts\\Events\\SlaViolated.cs",
+              "RelativeToolTip": "Shared\\Contracts\\Events\\SlaViolated.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T16:34:09.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IncidentEnded.cs",
+              "DocumentMoniker": "D:\\Projects\\pulseops\\Shared\\Contracts\\Events\\IncidentEnded.cs",
+              "RelativeDocumentMoniker": "Shared\\Contracts\\Events\\IncidentEnded.cs",
+              "ToolTip": "D:\\Projects\\pulseops\\Shared\\Contracts\\Events\\IncidentEnded.cs",
+              "RelativeToolTip": "Shared\\Contracts\\Events\\IncidentEnded.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T16:32:42.257Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

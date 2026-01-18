@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "ApiGateway.Controllers.EventsController",
+    "Method": "IncidentEnded",
+    "RelativePath": "api/events/incident-ended",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "evt",
+        "Type": "Shared.Contracts.Events.IncidentEnded",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Controllers.EventsController",
+    "Method": "IncidentStarted",
+    "RelativePath": "api/events/incident-started",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "evt",
+        "Type": "IncidentStarted",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

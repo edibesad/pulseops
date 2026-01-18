@@ -1,0 +1,135 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ApiGateway",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/events/incident-started": {
+      "post": {
+        "tags": [
+          "Events"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentStarted"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentStarted"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentStarted"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/events/incident-ended": {
+      "post": {
+        "tags": [
+          "Events"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentEnded"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentEnded"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncidentEnded"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IncidentEnded": {
+        "type": "object",
+        "properties": {
+          "incidentKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "region": {
+            "type": "string",
+            "nullable": true
+          },
+          "corelationId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IncidentStarted": {
+        "type": "object",
+        "properties": {
+          "incidentKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "region": {
+            "type": "string",
+            "nullable": true
+          },
+          "corelationId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
