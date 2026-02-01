@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - package
 
 variables:
   # Reduce noisy output
@@ -21,3 +22,14 @@ test_job:
   script:
     - echo "Test ediliyor..."
     - dotnet test src/PulseOps.sln --no-build
+
+package_job:
+  stage: package
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "Docker Image Paketleniyor..."
+    - docker build -t pulseops-gateway:latest -f src/ApiGateway/Dockerfile src
