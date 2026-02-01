@@ -16,17 +16,17 @@ namespace ApiGateway.Controllers
         }
 
         [HttpPost("incident-started")]
-        public IActionResult IncidentStarted([FromBody] IncidentStarted evt)
+        public async Task<IActionResult> IncidentStarted([FromBody] IncidentStarted evt)
         {
 
-            _publisher.Publish(evt);
+            await _publisher.PublishAsync(evt);
             return Accepted(new { ok = true, received = evt });
         }
 
         [HttpPost("incident-ended")]
-        public IActionResult IncidentEnded([FromBody] IncidentEnded evt)
+        public async Task<IActionResult> IncidentEnded([FromBody] IncidentEnded evt)
         {
-            _publisher.Publish(evt);
+            await _publisher.PublishAsync(evt);
             return Accepted(new { ok = true, received = evt });
         }
     }

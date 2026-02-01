@@ -1,4 +1,5 @@
 using EventWorker.Application;
+using EventWorker.Infrastructure;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
@@ -6,11 +7,13 @@ using System.Text.Json;
 
 namespace EventWorker
 {
-    public class Worker(IConfiguration config, IServiceScopeFactory scopeFactory, ILogger<Worker> logger) : BackgroundService
+    public class Worker(IConfiguration config, IServiceScopeFactory scopeFactory, ILogger<Worker> logger, IRabbitMqTopology rabbitMqTopology) : BackgroundService
     {
         private readonly IConfiguration _config = config;
         private readonly IServiceScopeFactory _scopeFactory = scopeFactory;
         private readonly ILogger<Worker> _logger = logger;
+        private IRabbitMqTopology _rabbitMqTopology = rabbitMqTopology;
+
 
         private IConnection? _connection;
         private IChannel? _channel;
@@ -41,87 +44,7 @@ namespace EventWorker
             _connection = await factory.CreateConnectionAsync(ct);
             _channel = await _connection.CreateChannelAsync(cancellationToken: ct);
 
-
-
-
-            await _channel.ExchangeDeclareAsync(
-                exchange: "events.dlx",
-                type: ExchangeType.Direct,
-                durable: true,
-                autoDelete: false,
-                arguments: null,
-                cancellationToken: ct
-            );
-
-
-
-            await _channel.QueueDeclareAsync(
-                queue: "events.dlq",
-                durable: true,
-                exclusive: false,
-                autoDelete: false,
-                arguments: null,
-                cancellationToken: ct
-            );
-
-
-            await _channel.QueueBindAsync(
-                queue: "events.dlq",
-                exchange: "events.dlx",
-                routingKey: "events.raw",
-                arguments: null,
-                cancellationToken: ct
-            );
-
-
-
-            await _channel.ExchangeDeclareAsync(
-                exchange: "events.retry.dlx",
-                type: ExchangeType.Direct,
-                durable: true,
-                autoDelete: false,
-                arguments: null,
-                cancellationToken: ct
-            );
-
-            await _channel.QueueDeclareAsync(
-                 queue: "events.raw",
-                 durable: true,
-                 exclusive: false,
-                 autoDelete: false,
-                 arguments: new Dictionary<string, object?>
-                 {
-                     ["x-dead-letter-exchange"] = "events.dlx",
-                     ["x-dead-letter-routing-key"] = "events.raw"
-                 },
-                 cancellationToken: ct
-             );
-
-
-            await _channel.QueueBindAsync(
-                queue: "events.raw",
-                exchange: "events.retry.dlx",
-                routingKey: "events.raw",
-                arguments: null,
-                cancellationToken: ct
-            );
-
-
-
-            await _channel.QueueDeclareAsync(
-                queue: "events.retry.5s",
-                durable: true,
-                exclusive: false,
-                autoDelete: false,
-                arguments: new Dictionary<string, object?>
-                {
-                    ["x-message-ttl"] = 5000, // 5 saniye beklet
-                    ["x-dead-letter-exchange"] = "events.retry.dlx",
-                    ["x-dead-letter-routing-key"] = "events.raw"
-                },
-                cancellationToken: ct
-            );
-
+            await _rabbitMqTopology.SetupAsync(_channel, ct);
 
             var consumer = new AsyncEventingBasicConsumer(_channel);
 

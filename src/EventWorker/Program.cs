@@ -1,4 +1,5 @@
 using EventWorker;
+using EventWorker.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddDbContext<PulseOpsDbContext>(options =>
 
 builder.Services.AddScoped<IIncidentEventRepository, IncidentEventRepository>();
 builder.Services.AddScoped<IEventIngestionService, EventIngestionService>();
+
+builder.Services.AddSingleton<IRabbitMqTopology, RabbitMqTopology>();
 
 builder.Services.AddHostedService<Worker>();
 
