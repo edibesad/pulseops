@@ -1,0 +1,23 @@
+stages:
+  - build
+  - test
+
+variables:
+  # Reduce noisy output
+  DOTNET_NOLOGO: "true"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+
+build_job:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  script:
+    - echo "Derleniyor..."
+    - dotnet restore src/PulseOps.sln
+    - dotnet build src/PulseOps.sln --no-restore
+
+test_job:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  script:
+    - echo "Test ediliyor..."
+    - dotnet test src/PulseOps.sln --no-build
