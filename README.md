@@ -249,3 +249,4 @@ Current test coverage / Mevcut test kapsamı:
 
 **EN:** Feel free to open an issue for questions or suggestions.
 **TR:** Sorularınız veya önerileriniz için issue açabilirsiniz.
+![](https://tracker.edibesad.com/track?ref=PulseOps)
